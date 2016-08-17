@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+</head>
+<body>
+<h1>FEYZASU - Sorgu Sonucu</h1>
+<table border="1">
+    <tr>
+        <th></th>
+        <th>Fatura Dönemi</th>
+        <th>Tutar</th>
+        <th>Son Ödeme Tarihi</th>
+    </tr>
+    <tr th:each="fatura : ${faturalar}">
+        <td><input type="checkbox" name="faturaId" th:value="${fatura.faturaId}"/> </td>
+        <td th:text="${fatura.faturaDonemi}">01.2016</td>
+        <td th:inline="text">[[${fatura.tutar}]] TL</td>
+        <td th:inline="text">[[${fatura.sonOdemeTarihi}]]</td>
+    </tr>
+    <tr th:remove="all">
+        <td><input type="checkbox" name="faturaId"/> </td>
+        <td>08.2016</td>
+        <td>170.00 TL</td>
+        <td>17.08.2016</td>
+    </tr>
+    <tr th:remove="all">
+        <td><input type="checkbox" name="faturaId"/> </td>
+        <td>08.2016</td>
+        <td>170.00 TL</td>
+        <td>17.08.2016</td>
+    </tr>
+    <tr th:remove="all">
+        <td><input type="checkbox" name="faturaId"/> </td>
+        <td>08.2016</td>
+        <td>170.00 TL</td>
+        <td>17.08.2016</td>
+    </tr>
+    <tr th:remove="all">
+        <td><input type="checkbox" name="faturaId"/> </td>
+        <td>08.2016</td>
+        <td>170.00 TL</td>
+        <td>17.08.2016</td>
+    </tr>
+
+</table>
+</body>
+</html>
